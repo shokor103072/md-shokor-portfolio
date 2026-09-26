@@ -71,7 +71,7 @@ if (sliderTrack) {
   }
 }
 
-document.querySelector('.news-more-btn')?.addEventListener('click', () => { window.location.href = '/news/'; });
+document.querySelector('.news-more-btn')?.addEventListener('click', () => { window.location.href = '/md-shokor-portfolio/news/'; });
 
 const searchInput = document.querySelector('#publication-search');
 const publicationEntries = [...document.querySelectorAll('.publication-entry')];
