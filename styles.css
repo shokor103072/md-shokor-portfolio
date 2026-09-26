@@ -376,14 +376,20 @@ h1 .brand-first, h1 .brand-last { font-size: 44px; }
 
 /* Gallery */
 .gallery-grid { columns: 3; column-gap: 14px; }
-.gallery-page .gallery-grid { columns: 2; }
+.gallery-page .gallery-grid { columns: 3; }
+.gallery-section { margin-bottom: 42px; }
+.gallery-section > h2 { margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); font-family: var(--font-heading); font-size: 24px; font-weight: 600; }
 .gallery-card { display: inline-block; width: 100%; margin: 0 0 14px; break-inside: avoid; border: 1px solid var(--rule); background: var(--bg); }
 .gallery-media { position: relative; display:flex; min-height:180px; align-items:center; justify-content:center; overflow:hidden; background:var(--paper); }
 .gallery-card:nth-child(3n+2) .gallery-media { min-height: 305px; }
 .gallery-card:nth-child(4n) .gallery-media { min-height: 225px; }
 .gallery-media img { width:100%; height:100%; min-height:240px; object-fit:cover; object-position:center top; }
+.gallery-page .gallery-card:nth-child(n) .gallery-media { min-height: 0; }
+.gallery-image-link { display: block; width: 100%; border: 0; }
+.gallery-page .gallery-media img { display: block; width: 100%; height: auto; min-height: 0; object-fit: contain; }
+.gallery-image-link:focus-visible { outline: 3px solid var(--accent-color); outline-offset: -3px; }
 .gallery-card figcaption { padding: 8px 11px 10px; }
-.gallery-card h2 { margin: 0 0 2px; font-family: var(--font-heading); font-size: 14px; font-weight: 600; line-height: 1.3; }
+.gallery-card h2,.gallery-card h3 { margin: 0 0 2px; font-family: var(--font-heading); font-size: 14px; font-weight: 600; line-height: 1.3; }
 .gallery-card p { margin: 0; color: var(--ink-mute); font-family: var(--font-mono); font-size: 9px; line-height: 1.45; }
 .gallery-ai{background:linear-gradient(135deg,#174544,#85bab1)}.gallery-ai span{color:#fff;font-family:var(--font-heading);font-size:84px}.gallery-ai::before{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.35)}
 .gallery-poster{flex-direction:column;align-items:flex-start;padding:25px;background:#e9e0cf;color:#3f413a}.gallery-poster span{font-family:var(--font-heading);font-size:28px;line-height:1}.gallery-poster i{display:block;width:80%;height:5px;margin-top:15px;background:#568b83}.gallery-poster i:nth-of-type(2){width:55%}.gallery-poster i:nth-of-type(3){width:68%}
