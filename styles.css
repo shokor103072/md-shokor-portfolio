@@ -125,8 +125,11 @@ h1 .brand-first, h1 .brand-last { font-size: 44px; }
 .profile-slide img { display: block; width: 52%; height: 100%; margin-left: auto; object-fit: cover; object-position: center 28%; filter: saturate(.82) contrast(.98); }
 .event-slide { display: flex; align-items: center; justify-content: center; background: linear-gradient(120deg,#203636,#c7baa4); }
 .event-slide img { width: auto; max-width: 100%; height: 100%; object-fit: contain; }
+.slider-track, .photo-highlight-slide { aspect-ratio: 4/3; }
 .photo-highlight-slide { background: #1d302f; }
-.photo-highlight-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo-highlight-slide::before { content: ""; position: absolute; inset: -24px; background: var(--slide-image) center / cover no-repeat; filter: blur(22px) brightness(.45); }
+.photo-highlight-slide img { position: relative; display: block; width: 100%; height: 100%; object-fit: contain; }
+.photo-highlight-slide .slide-caption { z-index: 1; }
 .slide-caption { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding: 14px 18px; color: #faf8f5; background: linear-gradient(transparent, rgba(29,26,21,.82)); font-family: var(--font-sans); font-size: 13px; line-height: 1.45; }
 .slide-where { opacity: .8; font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; white-space: nowrap; }
 .slider-nav-btn { position: absolute; top: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--rule); background: var(--bg); color: var(--ink); font-family: var(--font-heading); font-size: 18px; line-height: 1; cursor: pointer; transform: translateY(-50%); transition: all .15s; }
