@@ -350,6 +350,8 @@ h1 .brand-first, h1 .brand-last { font-size: 44px; }
 .service-list li::before { content: "·"; position: absolute; left: 2px; color: var(--ink-mute); }
 .leadership-list li { padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--rule-soft); }
 .leadership-list li span { display: block; margin-top: 2px; color: var(--ink-mute); font-family: var(--font-sans); font-size: 12px; }
+.activity-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.activity-tags li { padding: 7px 12px; border: 1px solid var(--rule); border-radius: 3px; color: var(--ink); font-family: var(--font-sans); font-size: 13px; }
 .service-block > p { margin: 16px 0 0; color: var(--ink-soft); }
 
 /* CV */
