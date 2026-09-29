@@ -63,7 +63,7 @@ if (sliderTrack) {
   prev?.addEventListener('click', () => showSlide(slideIndex - 1));
   next?.addEventListener('click', () => showSlide(slideIndex + 1));
   dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (!window.__enhCarouselActive && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const start = () => { timer = setInterval(() => showSlide(slideIndex + 1), 6500); };
     start();
     slider?.addEventListener('mouseenter', () => clearInterval(timer));
