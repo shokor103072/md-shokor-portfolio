@@ -44,6 +44,33 @@ if (moreButton && moreMenu) {
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMore(); });
 }
 
+const sliderTrack = document.querySelector('.slider-track');
+if (sliderTrack) {
+  const dots = [...document.querySelectorAll('.slider-dot')];
+  const currentLabel = document.querySelector('.slide-current');
+  const prev = document.querySelector('.slider-prev');
+  const next = document.querySelector('.slider-next');
+  const slider = document.querySelector('.slider');
+  let slideIndex = 0;
+  let timer;
+
+  const showSlide = (index) => {
+    slideIndex = (index + dots.length) % dots.length;
+    sliderTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
+    dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === slideIndex));
+    if (currentLabel) currentLabel.textContent = String(slideIndex + 1).padStart(2, '0');
+  };
+  prev?.addEventListener('click', () => showSlide(slideIndex - 1));
+  next?.addEventListener('click', () => showSlide(slideIndex + 1));
+  dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const start = () => { timer = setInterval(() => showSlide(slideIndex + 1), 6500); };
+    start();
+    slider?.addEventListener('mouseenter', () => clearInterval(timer));
+    slider?.addEventListener('mouseleave', start);
+  }
+}
+
 document.querySelector('.news-more-btn')?.addEventListener('click', () => { window.location.href = '/md-shokor-portfolio/news/'; });
 
 const searchInput = document.querySelector('#publication-search');
